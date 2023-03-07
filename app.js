@@ -20,6 +20,7 @@ const start = async () => {
     await connectDB(process.env.MONGO_URL);
     app.listen(
       process.env.POPT || PORT,
+      "0.0.0.0",
       console.log("サーバーが起動しました。")
     );
   } catch (err) {
