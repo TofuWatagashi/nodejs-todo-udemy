@@ -17,7 +17,7 @@ app.use("/api/v1/tasks", taskRoute);
 const start = async () => {
   try {
     // console.log(process.env.MOONGO_URL);
-    await connectDB(process.env.MONGO_URL);
+    await connectDB(process.env.MONGO_HEROKU_URL || process.env.MONGO_URL);
     app.listen(
       process.env.POPT || PORT,
       "0.0.0.0",
